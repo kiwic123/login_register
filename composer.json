@@ -17,6 +17,7 @@
       "classmap": [
           "validators",
           "libraries",
+          "action",
           "config"
       ]
     }

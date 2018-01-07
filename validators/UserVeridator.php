@@ -82,9 +82,9 @@ class UserVeridator {
         $result = Database::get()->execute('SELECT email FROM members WHERE email = :email', array(':email' => $email));
         if(isset($result[0]['email']) AND !empty($result[0]['email'])){
             $this->error[] = 'Email provided is already in use.';
-            return false;
+            return true;
         }
-		return true;
+		return false;
     }
     
     
