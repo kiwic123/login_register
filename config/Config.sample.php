@@ -9,5 +9,8 @@
      const MAIL_FROM_NAME = "http://127.0.0.1/login_register/";
      const MAIL_USER_NAME = "your_gmail_account";
      const MAIL_USER_PASSWROD = "your_gmail_password";
+     const FB_APP_ID = 'your_app_id';
+     const FB_APP_SECRET = 'your_app_secret';
+     const FB_CALLBACK_URL = 'http://localhost/game/fb-callback';
  }
   */

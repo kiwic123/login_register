@@ -7,3 +7,8 @@ $route = new Router(Request::uri()); //搭配 .htaccess 排除資料夾名稱後
 
 $msg = new \Plasticbrain\FlashMessages\FlashMessages();
 
+$fb = new Facebook\Facebook([
+    'app_id' => Config::FB_APP_ID, // Replace {app-id} with your app id
+    'app_secret' => Config::FB_APP_SECRET,
+    'default_graph_version' => 'v2.2',
+    ]);

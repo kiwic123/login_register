@@ -86,6 +86,30 @@ class UserVeridator {
         }
 		return false;
     }
+
+    /**
+     * 驗證臉書帳號是否已存在於資料庫中
+     */
+    public function fbLoginVerification($email, $fb_user_id) {
+        $result = Database::get()->execute('SELECT memberID FROM members WHERE email = :email AND fb_user_id = :fb_user_id', 
+        array(':email' => $email, ':fb_user_id' => $fb_user_id));
+        if(isset($result[0]['memberID']) AND !empty($result[0]['memberID'])){
+            return true;
+        }
+		return false;
+    }
+
+    /**
+     * 用臉書 ID 取得 memberID
+     */
+    public function getMemberIdByFb($fb_user_id) {
+        $result = Database::get()->execute('SELECT memberID FROM members WHERE fb_user_id = :fb_user_id', 
+        array(':fb_user_id' => $fb_user_id));
+        if(isset($result[0]['memberID']) AND !empty($result[0]['memberID'])){
+            return $result[0]['memberID'];
+        }
+		return false;
+    }
     
     
 }
