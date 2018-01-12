@@ -63,10 +63,13 @@
   if(count($error) == 0)
   {
     // 沒有註冊
+
+    $passwordObject = new Password();
+
     $table = 'members';
     $data_array = array(
       'username' => $fb_user_id,
-      'password' => '',
+      'password' => $passwordObject->password_hash(date().rand(), PASSWORD_BCRYPT),
       'email' => $email,
       'active' => 'Yes',
       'fb_user_id' => $fb_user_id

@@ -5,7 +5,7 @@
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" method="post" action="<?=Config::BASE_URL?>do_login" autocomplete="off">
 				<h2>Please Login</h2>
-				<p><a href='register'>Register a New Account</a></p>
+				<p><a href='<?=Config::BASE_URL?>register'>Register a New Account</a></p>
 				<hr>
 
 				<?php if ($msg->hasMessages()) $msg->display(); ?>
@@ -20,7 +20,7 @@
 				
 				<div class="row">
 					<div class="col-xs-9 col-sm-9 col-md-9">
-						 <a href='forget'>Forgot your Password?</a>
+						 <a href='<?=Config::BASE_URL?>forget'>Forgot your Password?</a>
 					</div>
 				</div>
 				
