@@ -54,7 +54,7 @@
   $response = $fb->get('/me?locale=en_US&fields=id,name,email');
   $userNode = $response->getGraphUser();
   $email = $userNode->getField('email');
-  $fb_user_id = $userNode->getField('id');
+  $fbUserId = $userNode->getField('id');
 
   $userVeridator = new UserVeridator();
   $userVeridator->isEmailDuplicate($email);
@@ -68,23 +68,23 @@
 
     $table = 'members';
     $data_array = array(
-      'username' => $fb_user_id,
+      'username' => $fbUserId,
       'password' => $passwordObject->password_hash(date().rand(), PASSWORD_BCRYPT),
       'email' => $email,
       'active' => 'Yes',
-      'fb_user_id' => $fb_user_id
+      'fbUserId' => $fbUserId
     );
     Database::get()->insert($table, $data_array);
     
     $_SESSION['memberID'] = Database::get()->getLastId();
-    $_SESSION['username'] = $fb_user_id;
+    $_SESSION['username'] = $fbUserId;
 
   }else{
     // 有註冊了
-    if($userVeridator->fbLoginVerification($email, $fb_user_id)){
-      $_SESSION['memberID'] = $userVeridator->getMemberIdByFb($fb_user_id);
-      $_SESSION['username'] = $fb_user_id;
+    if($userVeridator->fbLoginVerification($email, $fbUserId)){
+      $_SESSION['memberID'] = $userVeridator->getMemberIdByFb($fbUserId);
+      $_SESSION['username'] = $fbUserId;
     }
   }
-  header('Location: home');
+  header('Location: '.Config::BASE_URL."upsell");
   exit;

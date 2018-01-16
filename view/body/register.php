@@ -1,8 +1,12 @@
 <div class="container">
-	<div class="row">
-	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+<div class="row">
+	  <div class="col-sm-10 col-lg-6 mx-auto pt-3">
+	  <h2>Please Sign Up</h2>
+	  <div class="card mb-3">
+        <div class="card-body">
+          <p class="card-text">
 			<form role="form" method="post" action="<?=Config::BASE_URL?>do_register" autocomplete="off">
-				<h2>Please Sign Up</h2>
+				
 				<p>Already a member? <a href='login'>Login</a></p>
 				<hr>
 
@@ -31,6 +35,7 @@
 					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
 				</div>
 			</form>
+		</p>
 		</div>
 	</div>
 

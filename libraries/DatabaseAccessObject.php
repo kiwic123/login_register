@@ -89,10 +89,11 @@ class DatabaseAccessObject {
             $tmp_dat[] = ":$key";
             $prepare_array[":".$key] = $value;
         }
-        $columns = join(",", $tmp_col);
-        $data = join(",", $tmp_dat);
+        $columns = join(", ", $tmp_col);
+        $data = join(", ", $tmp_dat);
 
         $this->last_sql = "INSERT INTO " . $table . "(" . $columns . ")VALUES(" . $data . ")";
+        
         $stmt = $this->db->prepare($this->last_sql);
         $stmt->execute($prepare_array);
         $this->last_id = $this->db->lastInsertId();

@@ -12,3 +12,7 @@ $fb = new Facebook\Facebook([
     'app_secret' => Config::FB_APP_SECRET,
     'default_graph_version' => 'v2.2',
     ]);
+
+if(!isset($_SESSION['cartQty']))$_SESSION['cartQty'] = array();
+if(!isset($_SESSION['cartPrice']))$_SESSION['cartPrice'] = array();
+if(!isset($_SESSION['cartName']))$_SESSION['cartName'] = array();

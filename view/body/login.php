@@ -1,10 +1,12 @@
 <div class="container">
-
-	<div class="row">
-
-	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-			<form role="form" method="post" action="<?=Config::BASE_URL?>do_login" autocomplete="off">
-				<h2>Please Login</h2>
+<div class="row">
+	  <div class="col-sm-10 col-lg-6 mx-auto pt-3">
+	  <h2>Please Login</h2>
+	  <div class="card mb-3">
+        <div class="card-body">
+          <p class="card-text">
+		  <form role="form" method="post" action="<?=Config::BASE_URL?>do_login" autocomplete="off">
+				
 				<p><a href='<?=Config::BASE_URL?>register'>Register a New Account</a></p>
 				<hr>
 
@@ -30,9 +32,9 @@
 					<?php include("view/_component/fb-login.php");?>
 				</div>
 			</form>
-		</div>
-	</div>
-
-
-
+			</p>
+        </div>
+      </div>
+      </div>
+      </div>
 </div>

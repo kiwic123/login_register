@@ -7,5 +7,5 @@ $controller_array = array_change_key_case($controller_array, CASE_LOWER);
 if (in_array($parameter.'.php', $controller_array)) {
   include( 'controller/'.$parameter.'.php' );
 }else{
-  include( 'controller/login.php' );
+  include( 'controller/index.php' );
 }
